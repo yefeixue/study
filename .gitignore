@@ -1,0 +1,12 @@
+target
+Demo_Netty.iml
+.idea
+Demo_Netty5.iml
+.settings
+bin
+.classpath
+.project
+/Serial/.settings
+/Serial/bin
+/Serial/.classpath
+/Serial/.project
