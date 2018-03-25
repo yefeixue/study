@@ -14,15 +14,15 @@ swingbuilder
 netty3 				netty4或5
 
 
-ChannelBuffer		ByteBuf
+ChannelBuffer		ByteBuf			channel中buffer的使用
 
-ChannelBuffers		PooledByteBufAllocator(要注意使用完后释放buffer)或UnpooledByteBufAllocator或Unpooled
+ChannelBuffers		PooledByteBufAllocator(要注意使用完后释放buffer)或UnpooledByteBufAllocator或Unpooled   	自定义申请buffer的工具类
 
-FrameDecoder		ByteToMessageDecoder
+FrameDecoder		ByteToMessageDecoder		解码器
+	
+OneToOneEncoder		MessageToByteEncoder		编码器
 
-OneToOneEncoder		MessageToByteEncoder
-
-messageReceive		channelRead0(netty5里面是messageReceive)
+messageReceive		channelRead0(netty5里面是messageReceive)	
 
 
 业务线程池
