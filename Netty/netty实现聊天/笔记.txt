@@ -30,8 +30,21 @@ messageReceive		channelRead0(netty5里面是messageReceive)
 EventLoopGroup 消息串行化
 
 
-1-1
+线程 1-1
+//并发情况下修改玩家1，锁当前玩家
 lock player
+
+
+线程 2-1
+//并发情况下修改玩家1，锁当前玩家
+lock player
+这个 时候竞争锁
+
+线程 1-2   在1-1 还没有修改完毕的时候
+//并发情况下修改玩家1，锁当前玩家
+lock player
+
+
 
 1 2 3 4 
 

@@ -33,6 +33,11 @@ public class Server {
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
 		EventLoopGroup workerGroup = new NioEventLoopGroup();
 
+		//业务线程池，代替netty3中的消息处理时的自定义线程池
+		//内部是 消息串行化，比3中自定义好，对同一个通道中的请求有序处理
+		final EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
+
+
 		try {
 			// 设置循环线程组事例
 			b.group(bossGroup, workerGroup);
@@ -46,7 +51,7 @@ public class Server {
 				public void initChannel(SocketChannel ch) throws Exception {
 					ch.pipeline().addLast(new RequestDecoder());
 					ch.pipeline().addLast(new ResponseEncoder());
-					ch.pipeline().addLast(new ServerHandler());
+					ch.pipeline().addLast(eventLoopGroup,new ServerHandler());
 				}
 			});
 

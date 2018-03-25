@@ -27,6 +27,8 @@ public class ServerHandler extends SimpleChannelInboundHandler<Request> {
 	 */
 	@Override
 	public void channelRead0(ChannelHandlerContext ctx, Request request) throws Exception {
+		//打印 消息线程池设置是否生效！！！！
+		System.out.println("当前线程是："+Thread.currentThread().getName());
 
 		handlerMessage(new SessionImpl(ctx.channel()), request);
 	}
@@ -34,7 +36,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<Request> {
 	
 	/**
 	 * 消息处理
-	 * @param channelId
+	 * @param
 	 * @param request
 	 */
 	private void handlerMessage(Session session, Request request){
