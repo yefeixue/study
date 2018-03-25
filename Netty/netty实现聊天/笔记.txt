@@ -1,0 +1,68 @@
+整合前面讲的知识点
+
+聊天室
+
+netty3  
+
+netty3+protobuf
+
+netty5
+
+swingbuilder
+
+
+netty3 				netty4或5
+
+
+ChannelBuffer		ByteBuf
+
+ChannelBuffers		PooledByteBufAllocator(要注意使用完后释放buffer)或UnpooledByteBufAllocator或Unpooled
+
+FrameDecoder		ByteToMessageDecoder
+
+OneToOneEncoder		MessageToByteEncoder
+
+messageReceive		channelRead0(netty5里面是messageReceive)
+
+
+业务线程池
+
+EventLoopGroup 消息串行化
+
+
+1-1
+lock player
+
+1 2 3 4 
+
+同一个玩家的请求做一个有序的处理
+
+有序的请求处理线程池
+
+自己写一个
+
+1   2   3   4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,7 @@
 package com.cn.server;
 
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -51,6 +52,8 @@ public class Server {
 
 			b.option(ChannelOption.SO_BACKLOG, 2048);// 链接缓冲池队列大小
 
+			//设置netty使用的buffer类型，这个为对象池结构
+			b.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
 			// 绑定端口
 			b.bind(10102).sync();
 
