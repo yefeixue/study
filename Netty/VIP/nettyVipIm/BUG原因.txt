@@ -1,0 +1,1 @@
+晚上最后一个BUG的原因在于MessageObject要使用MessagePack进行序列号，就必须加上@Message注解，而且要提供一个无参的构造函数。
