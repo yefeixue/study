@@ -18,7 +18,8 @@ import org.jboss.netty.handler.codec.string.StringEncoder;
  * @author -琴兽-
  *
  */
-public class Client {
+public class
+Client {
 
 	public static void main(String[] args) {
 		
